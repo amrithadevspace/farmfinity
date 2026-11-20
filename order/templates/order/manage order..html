@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Order Details</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    padding:35px;
+    background:linear-gradient(-45deg,#d4fc79,#96e6a1,#c8e6c9,#e8f5e9);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+}
+
+/* Animated Background */
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Floating Leaves */
+
+body::before,
+body::after{
+    content:"🌿";
+    position:fixed;
+    font-size:40px;
+    opacity:.15;
+    pointer-events:none;
+    animation:leafFall 13s linear infinite;
+}
+
+body::before{
+    left:8%;
+    top:-10%;
+}
+
+body::after{
+    right:12%;
+    animation-delay:6s;
+}
+
+@keyframes leafFall{
+
+from{
+transform:translateY(-120px) rotate(0deg);
+}
+
+to{
+transform:translateY(110vh) rotate(360deg);
+}
+
+}
+
+/* Header */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.back-btn{
+    text-decoration:none;
+    background:#2e7d32;
+    color:white;
+    padding:12px 22px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+.back-btn:hover{
+    background:#1b5e20;
+    transform:translateY(-3px);
+}
+
+.header h2{
+    color:#1b5e20;
+    font-size:34px;
+    font-weight:700;
+}
+
+/* Glass Table */
+
+.table-container{
+
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(12px);
+    border-radius:22px;
+    padding:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    overflow-x:auto;
+
+    animation:fade .8s;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(25px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+table{
+
+    width:100%;
+    min-width:1050px;
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#2e7d32;
+    color:white;
+    padding:18px;
+    font-size:15px;
+    letter-spacing:.5px;
+
+}
+
+th:first-child{
+
+border-top-left-radius:12px;
+
+}
+
+th:last-child{
+
+border-top-right-radius:12px;
+
+}
+
+td{
+
+    padding:18px;
+    text-align:center;
+    border-bottom:1px solid #e8e8e8;
+    color:#444;
+
+}
+
+tr:nth-child(even){
+
+background:#f7fff8;
+
+}
+
+tr:hover{
+
+background:#e8f5e9;
+transition:.3s;
+transform:scale(1.003);
+
+}
+
+/* Status */
+
+.status{
+
+display:inline-block;
+padding:7px 16px;
+border-radius:20px;
+font-size:14px;
+font-weight:600;
+background:#dcedc8;
+color:#2e7d32;
+
+}
+
+/* Buttons */
+
+.manage{
+
+display:flex;
+justify-content:center;
+gap:10px;
+
+}
+
+.action-btn{
+
+text-decoration:none;
+padding:10px 18px;
+border-radius:25px;
+color:white;
+font-size:14px;
+font-weight:600;
+transition:.3s;
+display:inline-block;
+
+}
+
+.accept{
+
+background:linear-gradient(135deg,#43a047,#2e7d32);
+
+}
+
+.accept:hover{
+
+background:linear-gradient(135deg,#2e7d32,#1b5e20);
+transform:translateY(-3px);
+
+}
+
+.reject{
+
+background:linear-gradient(135deg,#ef5350,#c62828);
+
+}
+
+.reject:hover{
+
+background:linear-gradient(135deg,#c62828,#8e0000);
+transform:translateY(-3px);
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+body{
+padding:18px;
+}
+
+.header{
+
+flex-direction:column;
+gap:15px;
+
+}
+
+.header h2{
+
+font-size:25px;
+text-align:center;
+
+}
+
+.back-btn{
+
+align-self:flex-start;
+
+}
+
+.manage{
+
+flex-direction:column;
+
+}
+
+.action-btn{
+
+width:100%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<a href="/temp/farmer/" class="back-btn">← Back Home</a>
+
+<h2>📦 View Order Details</h2>
+
+</div>
+
+<div class="table-container">
+
+<table>
+
+<tr>
+
+<th>Date</th>
+<th>User</th>
+<th>Product</th>
+<th>Quantity</th>
+<th>Total Amount</th>
+<th>Manage</th>
+<th>Status</th>
+
+</tr>
+
+{% for i in aa %}
+
+<tr>
+
+<td>{{ i.date }}</td>
+
+<td>{{ i.user.username }}</td>
+
+<td>{{ i.product.product_name }}</td>
+
+<td>{{ i.quantity }}</td>
+
+<td>₹ {{ i.total_amount }}</td>
+
+<td>
+
+<div class="manage">
+
+<a href="/order/accept_o/{{ i.order_id }}" class="action-btn accept">
+✔ Accept
+</a>
+
+<a href="/order/reject_o/{{ i.order_id }}" class="action-btn reject">
+✖ Reject
+</a>
+
+</div>
+
+</td>
+
+<td>
+
+<span class="status">
+{{ i.status }}
+</span>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

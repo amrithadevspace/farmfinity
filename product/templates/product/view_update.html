@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Product Details</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    padding:35px;
+    background:linear-gradient(-45deg,#d4fc79,#96e6a1,#c8e6c9,#f1f8e9);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+}
+
+/* Animated Background */
+
+@keyframes bgMove{
+
+0%{background-position:0% 50%;}
+
+50%{background-position:100% 50%;}
+
+100%{background-position:0% 50%;}
+
+}
+
+/* Floating Leaves */
+
+body::before,
+body::after{
+
+content:"🌿";
+position:fixed;
+font-size:42px;
+opacity:.12;
+pointer-events:none;
+animation:leafFall 12s linear infinite;
+
+}
+
+body::before{
+
+left:5%;
+top:-10%;
+
+}
+
+body::after{
+
+right:8%;
+animation-delay:6s;
+
+}
+
+@keyframes leafFall{
+
+from{
+transform:translateY(-120px) rotate(0deg);
+}
+
+to{
+transform:translateY(110vh) rotate(360deg);
+}
+
+}
+
+/* Header */
+
+.header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+
+}
+
+.back-btn{
+
+text-decoration:none;
+background:linear-gradient(135deg,#43a047,#2e7d32);
+color:#fff;
+padding:12px 22px;
+border-radius:40px;
+font-weight:600;
+transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+.back-btn:hover{
+
+transform:translateY(-4px);
+box-shadow:0 15px 30px rgba(0,0,0,.25);
+
+}
+
+.header h2{
+
+color:#1b5e20;
+font-size:34px;
+font-weight:700;
+
+}
+
+/* Glass Card */
+
+.table-container{
+
+background:rgba(255,255,255,.88);
+backdrop-filter:blur(15px);
+padding:25px;
+border-radius:25px;
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+overflow-x:auto;
+animation:fade .8s;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* Table */
+
+table{
+
+width:100%;
+min-width:1250px;
+border-collapse:collapse;
+
+}
+
+th{
+
+background:linear-gradient(135deg,#2e7d32,#1b5e20);
+color:white;
+padding:18px;
+font-size:15px;
+letter-spacing:.5px;
+white-space:nowrap;
+
+}
+
+th:first-child{
+
+border-top-left-radius:15px;
+
+}
+
+th:last-child{
+
+border-top-right-radius:15px;
+
+}
+
+td{
+
+padding:18px;
+text-align:center;
+border-bottom:1px solid #e5e5e5;
+font-size:15px;
+color:#444;
+
+}
+
+tr:nth-child(even){
+
+background:#f8fff8;
+
+}
+
+tr:hover{
+
+background:#ecfff1;
+transition:.3s;
+
+}
+
+/* Image */
+
+.product-img{
+
+width:85px;
+height:85px;
+border-radius:15px;
+object-fit:cover;
+border:3px solid #dcedc8;
+transition:.3s;
+box-shadow:0 8px 18px rgba(0,0,0,.12);
+
+}
+
+.product-img:hover{
+
+transform:scale(1.12);
+
+}
+
+/* Price */
+
+.price{
+
+font-weight:700;
+color:#2e7d32;
+font-size:16px;
+
+}
+
+/* Quantity Badge */
+
+.qty{
+
+background:#dcedc8;
+padding:8px 16px;
+border-radius:20px;
+font-weight:600;
+color:#2e7d32;
+
+}
+
+/* Unit */
+
+.unit{
+
+background:#e8f5e9;
+padding:8px 14px;
+border-radius:20px;
+font-weight:600;
+display:inline-block;
+
+}
+
+/* Update Button */
+
+.update-btn{
+
+display:inline-block;
+text-decoration:none;
+background:linear-gradient(135deg,#ff9800,#fb8c00);
+color:white;
+padding:10px 22px;
+border-radius:30px;
+font-weight:600;
+transition:.3s;
+box-shadow:0 8px 20px rgba(255,152,0,.35);
+
+}
+
+.update-btn:hover{
+
+background:linear-gradient(135deg,#f57c00,#ef6c00);
+transform:translateY(-3px);
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+body{
+
+padding:18px;
+
+}
+
+.header{
+
+flex-direction:column;
+gap:15px;
+
+}
+
+.header h2{
+
+font-size:25px;
+text-align:center;
+
+}
+
+.back-btn{
+
+align-self:flex-start;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<a href="/temp/farmer/" class="back-btn">← Back Home</a>
+
+<h2>🛒 View Product Details</h2>
+
+</div>
+
+<div class="table-container">
+
+<table>
+
+<tr>
+
+<th>Date</th>
+<th>Farmer</th>
+<th>Product</th>
+<th>Category</th>
+<th>Description</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Unit</th>
+<th>Action</th>
+
+</tr>
+
+{% for i in k %}
+
+<tr>
+
+<td>{{ i.date }}</td>
+
+<td>{{ i.farmer.farmer_name }}</td>
+
+<td><b>{{ i.product_name }}</b></td>
+
+<td>{{ i.category }}</td>
+
+<td>{{ i.description }}</td>
+
+<td class="price">₹ {{ i.price }}</td>
+
+<td>
+
+<span class="qty">
+
+{{ i.quantity }}
+
+</span>
+
+</td>
+
+<td>
+
+<span class="unit">
+
+{{ i.unit }}
+
+</span>
+
+</td>
+
+<td>
+
+<a href="/product/update/{{ i.product_id }}" class="update-btn">
+
+✏ Update
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

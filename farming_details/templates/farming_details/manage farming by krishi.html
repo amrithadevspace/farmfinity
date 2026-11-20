@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Farming Method</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    padding:30px;
+    background:linear-gradient(-45deg,#d4fc79,#96e6a1,#dcedc8,#a5d6a7);
+    background-size:400% 400%;
+    animation:bgAnimation 12s ease infinite;
+}
+
+@keyframes bgAnimation{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.back-btn{
+    text-decoration:none;
+    background:#2e7d32;
+    color:#fff;
+    padding:12px 24px;
+    border-radius:30px;
+    font-weight:600;
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#1b5e20;
+    transform:translateY(-3px);
+}
+
+.header h2{
+    color:#1b5e20;
+    font-size:32px;
+    font-weight:700;
+}
+
+.table-container{
+    background:rgba(255,255,255,.95);
+    border-radius:20px;
+    padding:25px;
+    overflow-x:auto;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    animation:fadeIn .8s;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+table{
+    width:100%;
+    min-width:1100px;
+    border-collapse:collapse;
+}
+
+th{
+    background:#2e7d32;
+    color:#fff;
+    padding:15px;
+    white-space:nowrap;
+}
+
+td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+    color:#444;
+}
+
+tr:nth-child(even){
+    background:#f8fff8;
+}
+
+tr:hover{
+    background:#e8f5e9;
+    transition:.3s;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    padding:8px 18px;
+    border-radius:25px;
+    font-size:13px;
+    font-weight:600;
+    margin:3px;
+    transition:.3s;
+}
+
+.accept{
+    background:#43a047;
+}
+
+.accept:hover{
+    background:#2e7d32;
+    transform:scale(1.08);
+}
+
+.reject{
+    background:#e53935;
+}
+
+.reject:hover{
+    background:#c62828;
+    transform:scale(1.08);
+}
+
+.status{
+    color:#1b5e20;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+.header{
+    flex-direction:column;
+    gap:15px;
+}
+
+.header h2{
+    font-size:24px;
+}
+
+.back-btn{
+    align-self:flex-start;
+}
+
+}
+    /* Video */
+
+video{
+    width:220px;
+    height:140px;
+    border-radius:12px;
+    border:3px solid #43a047;
+    object-fit:cover;
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+}
+
+/* Article Button */
+
+.article-btn{
+    display:inline-block;
+    text-decoration:none;
+    background:linear-gradient(135deg,#2e7d32,#43a047);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 8px 18px rgba(46,125,50,.25);
+}
+
+.article-btn:hover{
+    transform:translateY(-3px);
+    background:linear-gradient(135deg,#1b5e20,#2e7d32);
+    color:#fff;
+}
+
+/* No File */
+
+.no-file{
+    color:#e53935;
+    font-weight:600;
+}
+
+/* Status */
+
+.status{
+    font-weight:700;
+    color:#2e7d32;
+}
+
+/* Header */
+
+.header h2{
+    font-size:34px;
+    color:#1b5e20;
+    letter-spacing:1px;
+}
+
+/* Table */
+
+table{
+    border-radius:15px;
+    overflow:hidden;
+}
+
+th{
+    background:linear-gradient(135deg,#2e7d32,#43a047);
+    font-size:16px;
+}
+
+td{
+    vertical-align:middle;
+}
+
+/* Accept */
+
+.accept{
+    background:linear-gradient(135deg,#4caf50,#2e7d32);
+    box-shadow:0 5px 15px rgba(46,125,50,.25);
+}
+
+.accept:hover{
+    transform:translateY(-2px) scale(1.05);
+}
+
+/* Reject */
+
+.reject{
+    background:linear-gradient(135deg,#ef5350,#c62828);
+    box-shadow:0 5px 15px rgba(198,40,40,.25);
+}
+
+.reject:hover{
+    transform:translateY(-2px) scale(1.05);
+}
+
+/* Container */
+
+.table-container{
+    border-top:6px solid #43a047;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+    <a href="/temp/admin/" class="back-btn">← Back Home</a>
+
+    <h2>🌾 Manage Farming Method of Krishi Bhavan</h2>
+
+</div>
+
+<div class="table-container">
+
+<table>
+
+<tr>
+    <th>Sender</th>
+    <th>Crop Name</th>
+    <th>Description</th>
+    <th>Video</th>
+    <th>Article</th>
+    <th>Manage</th>
+    <th>Status</th>
+</tr>
+
+{% for i in aa %}
+
+<tr>
+
+    <td>{{i.krishibhavan.krishibhavan_name}}</td>
+    <td>{{i.crop_name }}</td>
+    <td>{{i.discription }}</td>
+   <td>
+    <video width="220" height="140" controls>
+        <source src="/static/{{ i.video }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</td>
+    <td>
+        {% if i.article %}
+        <a href="/static/{{ i.article }}" target="_blank" class="article-btn">
+            📄 Read Article
+        </a>
+        {% else %}
+        <span class="no-file">No Article</span>
+        {% endif %}
+    </td>
+
+
+    <td>
+
+        <a href="/farming_details/accept_k/{{ i.farming_details_id }}" class="btn accept">
+            Accepted
+        </a>
+
+        <a href="/farming_details/reject_k/{{ i.farming_details_id }}" class="btn reject">
+            Rejected
+        </a>
+
+    </td>
+
+    <td class="status">{{ i.status }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

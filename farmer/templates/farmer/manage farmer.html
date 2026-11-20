@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Farmer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    padding:30px;
+    background:linear-gradient(135deg,#E8F5E9,#C8E6C9,#F1F8E9);
+}
+
+
+/* Header */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.header h2{
+    color:#1B5E20;
+    font-size:32px;
+    font-weight:700;
+}
+
+
+/* Back Button */
+
+.back-btn{
+    text-decoration:none;
+    padding:12px 24px;
+    background:#2E7D32;
+    color:white;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.back-btn:hover{
+    background:#1B5E20;
+}
+
+
+/* Table Container */
+
+.table-container{
+
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+
+/* Table */
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+
+th{
+
+    background:#2E7D32;
+    color:white;
+    padding:12px;
+    font-size:15px;
+
+}
+
+
+td{
+
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+    font-size:14px;
+    color:#444;
+
+}
+
+
+tr:nth-child(even){
+
+    background:#F9FFF9;
+
+}
+
+
+tr:hover{
+
+    background:#E8F5E9;
+
+}
+
+
+/* Farmer Photo */
+
+img{
+
+    width:80px;
+    height:80px;
+    border-radius:15px;
+    object-fit:cover;
+    border:3px solid #C8E6C9;
+
+}
+
+
+/* Buttons */
+
+.action-btn{
+
+    display:block;
+    text-decoration:none;
+    color:white;
+    padding:8px 15px;
+    border-radius:25px;
+    margin-bottom:8px;
+    font-size:13px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+
+.accept{
+
+    background:#43A047;
+
+}
+
+
+.accept:hover{
+
+    background:#2E7D32;
+
+}
+
+
+.reject{
+
+    background:#E53935;
+
+}
+
+
+.reject:hover{
+
+    background:#C62828;
+
+}
+
+
+/* Status */
+
+.status{
+
+    font-weight:700;
+    color:#1B5E20;
+
+}
+
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.table-container{
+
+overflow-x:auto;
+
+}
+
+}
+
+    /* District Filter */
+
+#district{
+    padding:12px 18px;
+    margin-bottom:25px;
+    border:2px solid #2E7D32;
+    border-radius:30px;
+    background:white;
+    color:#1B5E20;
+    font-family:'Poppins',sans-serif;
+    font-size:14px;
+    font-weight:500;
+    outline:none;
+    cursor:pointer;
+    min-width:220px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+#district:focus{
+    border-color:#1B5E20;
+    box-shadow:0 0 0 3px rgba(46,125,50,.15);
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+    <a href="/temp/admin/" class="back-btn">← Back Home</a>
+
+    <h2>🌾 Manage Farmer</h2>
+
+</div>
+
+<select id="district">
+
+    <option value="">Select District</option>
+    <option value="all">All</option>
+    <option value="kasaragod">Kasaragod</option>
+    <option value="kannur">Kannur</option>
+    <option value="kozhikkode">Kozhikode</option>
+    <option value="wayanad">Wayanad</option>
+    <option value="malappuram">Malappuram</option>
+    <option value="palakkad">Palakkad</option>
+    <option value="thrissur">Thrissur</option>
+    <option value="ernakulam">Ernakulam</option>
+    <option value="idukki">Idukki</option>
+    <option value="kottayam">Kottayam</option>
+    <option value="alappuzha">Alappuzha</option>
+    <option value="pathanamthitta">Pathanamthitta</option>
+    <option value="kollam">Kollam</option>
+    <option value="thiruvananthapuram">Thiruvananthapuram</option>
+
+</select>
+<div class="table-container">
+
+<table id="farmerTable">
+
+<tr>
+
+    <th>Name</th>
+    <th>Gender</th>
+    <th>House Name</th>
+    <th>Place</th>
+    <th>Post</th>
+    <th>District</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+    <th>Photo</th>
+    <th>Username</th>
+    <th>Farming Type</th>
+    <th>Manage</th>
+    <th>Status</th>
+
+</tr>
+
+{% for i in aa %}
+
+<tr data-district="{{ i.district }}">
+
+    <td>{{ i.farmer_name }}</td>
+    <td>{{ i.gender }}</td>
+    <td>{{ i.house_name }}</td>
+    <td>{{ i.place }}</td>
+    <td>{{ i.post }}</td>
+    <td>{{ i.district }}</td>
+    <td>{{ i.phone_number }}</td>
+    <td>{{ i.email }}</td>
+    <td><img src="/static/{{ i.photo }}"width="200" height="200" ></td>
+    <td>{{ i.username }}</td>
+    <td>{{ i.farming_type }}</td>
+
+    <td>
+
+        <a href="/farmer/accept/{{ i.farmer_id }}" class="action-btn accept">
+            Accepted
+        </a>
+
+        <a href="/farmer/reject/{{ i.farmer_id }}" class="action-btn reject">
+            Rejected
+        </a>
+
+    </td>
+
+    <td class="status">{{ i.status }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+$("#district").change(function(){
+
+    var district = $(this).val();
+
+    console.log(district);
+    $.ajax({
+
+    url: "/farmer/farmersearch/",
+
+    type: "GET",
+
+    data: {
+        district: district
+    },
+
+  success: function(data){
+
+    console.log("Selected:", district);
+    console.log("Farmers:", data.farmers);
+
+    $("#noFarmerRow").remove();
+
+    var rows = $("#farmerTable tr[data-district]");
+
+    if(district == "all"){
+
+        rows.show();
+
+        return;
+    }
+
+    rows.hide();
+
+    var count = 0;
+
+    rows.each(function(){
+
+        var rowDistrict = $(this).attr("data-district");
+
+        console.log("Row district:", rowDistrict);
+
+        if(rowDistrict == district){
+
+            $(this).show();
+
+            count++;
+
+        }
+
+    });
+
+    if(count == 0){
+
+        $("#farmerTable").append(`
+
+            <tr id="noFarmerRow">
+
+                <td colspan="13"
+                    style="
+                    text-align:center;
+                    color:#E53935;
+                    font-weight:600;
+                    padding:20px;
+                    ">
+
+                    No Farmers Found
+
+                </td>
+
+            </tr>
+
+        `);
+
+    }
+
+}
+});
+
+});
+
+</script>
+
+</body>
+</html>

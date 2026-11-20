@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>View Complaint About Farmer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+padding:40px;
+background:linear-gradient(-45deg,#d4fc79,#96e6a1,#b7e4c7,#95d5b2);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.back{
+position:fixed;
+top:20px;
+left:20px;
+background:#2e7d32;
+color:#fff;
+padding:12px 22px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.back:hover{
+background:#1b5e20;
+transform:translateY(-3px);
+}
+
+.container{
+max-width:1300px;
+margin:70px auto;
+background:#fff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+overflow:auto;
+}
+
+h3{
+text-align:center;
+color:#1b5e20;
+margin-bottom:25px;
+font-size:30px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:900px;
+}
+
+th{
+background:#2e7d32;
+color:white;
+padding:15px;
+}
+
+td{
+padding:14px;
+text-align:center;
+border-bottom:1px solid #ddd;
+}
+
+tr:nth-child(even){
+background:#f8fff8;
+}
+
+tr:hover{
+background:#eefbea;
+}
+
+.reply-btn{
+background:linear-gradient(90deg,#43a047,#2e7d32);
+color:white;
+padding:8px 18px;
+text-decoration:none;
+border-radius:25px;
+font-weight:600;
+transition:.3s;
+display:inline-block;
+}
+
+.reply-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 15px rgba(46,125,50,.3);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="/temp/admin/" class="back">← Back Home</a>
+
+<div class="container">
+
+<h3>🚜 View Complaints About Farmers</h3>
+
+<table>
+
+<tr>
+<th>Date</th>
+<th>User Name</th>
+<th>Farmer Name</th>
+<th>Complaint</th>
+    <th></th>
+</tr>
+
+{% for i in aa %}
+
+<tr>
+
+<td>{{ i.date }}</td>
+
+<td>{{ i.user.name }}</td>
+
+<td>{{ i.farmer.farmer_name }}</td>
+
+<td>{{ i.complaint }}</td>
+<td>
+<a href="/forward/for/{{i.complaint_id}}" class="reply-btn">
+forward
+</a>
+</td>
+
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

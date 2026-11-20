@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Successful</title>
+
+    <style>
+        body{
+            margin:0;
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-family:Arial,sans-serif;
+            background:#e8f5e9;
+        }
+
+        .success-box{
+            background:white;
+            padding:50px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* Green Tick */
+        .tick{
+            width:80px;
+            height:80px;
+            margin:0 auto 20px;
+            border-radius:50%;
+            background:#4caf50;
+            color:white;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:50px;
+            font-weight:bold;
+        }
+
+        .success-box h1{
+            color:#2e7d32;
+            margin-bottom:15px;
+        }
+
+        .success-box p{
+            color:#555;
+            font-size:18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="success-box">
+
+    <div class="tick">
+        ✓
+    </div>
+
+    <h1>Order Successful!</h1>
+
+    <p>Your order has been placed successfully.</p>
+
+    <p>Redirecting to products...</p>
+
+</div>
+<script>
+    setTimeout(function() {
+        window.location.href = "/product/v_prod/";
+    }, 3000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Register</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    background:linear-gradient(-45deg,#d4fc79,#96e6a1,#b7e4c7,#95d5b2);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+body::before,
+body::after{
+    content:"🌿";
+    position:absolute;
+    font-size:40px;
+    opacity:.18;
+    animation:leafFloat 12s linear infinite;
+}
+
+body::before{
+    left:8%;
+    top:-10%;
+}
+
+body::after{
+    right:10%;
+    animation-delay:6s;
+}
+
+@keyframes leafFloat{
+    from{
+        transform:translateY(-120px) rotate(0deg);
+    }
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    text-decoration:none;
+    background:#2e7d32;
+    color:white;
+    padding:12px 22px;
+    border-radius:30px;
+    font-weight:600;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#1b5e20;
+    transform:translateY(-3px);
+}
+
+.form-card{
+    width:100%;
+    max-width:700px;
+    background:rgba(255,255,255,.96);
+    padding:35px;
+    border-radius:22px;
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+    animation:fadeIn .8s;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h3{
+    text-align:center;
+    color:#1b5e20;
+    margin-bottom:25px;
+    font-size:30px;
+    font-weight:700;
+}
+
+table{
+    width:100%;
+}
+
+td{
+    padding:10px;
+}
+
+td:first-child{
+    width:35%;
+    color:#2e7d32;
+    font-weight:600;
+}
+
+input[type=text],
+input[type=password]{
+    width:100%;
+    padding:12px;
+    border:2px solid #c8e6c9;
+    border-radius:12px;
+    background:#f9fff9;
+    font-size:15px;
+    transition:.3s;
+}
+
+input:focus{
+    outline:none;
+    border-color:#43a047;
+    box-shadow:0 0 10px rgba(67,160,71,.25);
+}
+
+.gender-box{
+    display:flex;
+    gap:25px;
+    align-items:center;
+    color:#444;
+    font-weight:500;
+}
+
+.gender-box label{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+input[type=radio]{
+    accent-color:#2e7d32;
+}
+
+input[type=submit]{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(90deg,#43a047,#2e7d32);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+input[type=submit]:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(46,125,50,.35);
+}
+
+@media(max-width:768px){
+
+.form-card{
+    padding:25px;
+}
+
+table,
+tbody,
+tr,
+td{
+    display:block;
+    width:100%;
+}
+
+td{
+    padding:8px 0;
+}
+
+td:first-child{
+    margin-top:10px;
+}
+
+.gender-box{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+}
+
+h3{
+    font-size:24px;
+}
+
+}
+    /* Input Fields */
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=tel]{
+    width:100%;
+    padding:12px;
+    border:2px solid #c8e6c9;
+    border-radius:12px;
+    background:#f9fff9;
+    font-size:15px;
+    transition:.3s;
+}
+
+
+/* Focus Effect */
+
+input:focus{
+    outline:none;
+    border-color:#43a047;
+    box-shadow:0 0 10px rgba(67,160,71,.25);
+}
+
+
+/* Placeholder */
+
+::placeholder{
+    color:#999;
+}
+
+
+/* Radio Button */
+
+input[type=radio]{
+    accent-color:#2e7d32;
+}
+
+
+/* Valid Input */
+
+input:valid{
+    border-color:#43a047;
+}
+
+
+/* Invalid Input */
+
+input:invalid{
+    border-color:#e53935;
+}
+
+
+/* Focus Invalid */
+
+input:focus:invalid{
+    box-shadow:0 0 10px rgba(229,57,53,.25);
+}
+
+
+/* Focus Valid */
+
+input:focus:valid{
+    box-shadow:0 0 10px rgba(67,160,71,.25);
+}
+
+
+/* Submit Button */
+
+input[type=submit]{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(90deg,#43a047,#2e7d32);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+input[type=submit]:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(46,125,50,.35);
+}
+
+
+/* Submit Button Click Effect */
+
+input[type=submit]:active{
+    transform:scale(.98);
+}
+    input:focus{
+    outline:none;
+    border-color:#43a047;
+    box-shadow:0 0 10px rgba(67,160,71,.25);
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<a href="/temp/home/" class="back-btn">← Back Home</a>
+
+<div class="form-card">
+
+<form method="post">
+
+{% csrf_token %}
+
+<h3>👤 User Registration</h3>
+
+<table>
+
+<tr>
+<td>Name</td>
+<td><input type="text"
+name="name"
+placeholder="Enter your name"
+required
+pattern="[A-Za-z ]{3,30}"
+title="Name should contain only letters (3-30 characters).">
+
+</td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td colspan="2">
+<div class="gender-box">
+<label><input type="radio" name="gender" value="male" required> Male</label>
+<label><input type="radio" name="gender" value="female"> Female</label>
+
+</div>
+</td>
+</tr>
+
+<tr>
+<td>Place</td>
+<td><input type="text"
+name="place"
+placeholder="Enter your place"
+required
+pattern="[A-Za-z ]{3,30}"
+title="Place should contain only letters."></td>
+</tr>
+
+<tr>
+<td>Post</td>
+<td><input type="text"
+name="post"
+placeholder="Enter your post"
+required
+pattern="[A-Za-z ]{3,30}"
+title="Post should contain only letters."></td>
+</tr>
+
+<tr>
+<td>District</td>
+<td><input type="text"
+name="district"
+placeholder="Enter your district"
+required
+pattern="[A-Za-z ]{3,30}"
+title="District should contain only letters.">
+</td>
+</tr>
+
+<tr>
+<td>PIN</td>
+<td><input type="text"
+name="pin"
+placeholder="Enter PIN code"
+required
+pattern="[0-9]{6}"
+maxlength="6"
+title="PIN code must contain exactly 6 digits."></td>
+</tr>
+
+<tr>
+<td>Phone Number</td>
+<td><input type="tel"
+name="phone_number"
+placeholder="Enter phone number"
+required
+pattern="[6-9][0-9]{9}"
+maxlength="10"
+title="Enter a valid 10-digit phone number.">
+</td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type="email"
+name="email"
+placeholder="Enter email address"
+required
+title="Enter a valid email address."></td>
+</tr>
+
+<tr>
+<td>Username</td>
+<td><input type="text"
+name="username"
+placeholder="Enter username"
+required
+pattern="[A-Za-z0-9_]{4,15}"
+title="Username must contain 4-15 characters. Only letters, numbers and underscore (_) are allowed."></td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="password"
+name="password"
+placeholder="Enter password"
+required
+pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"
+title="Password must contain at least 8 characters, including one uppercase letter, one lowercase letter and one number.">
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td><input type="submit" value="REGISTER"></td>
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+</body>
+</html>

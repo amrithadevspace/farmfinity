@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Wishlist</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f7f2;
+}
+
+header{
+    background:#2E7D32;
+    color:white;
+    text-align:center;
+    padding:18px;
+}
+
+.back{
+    display:inline-block;
+    margin:20px;
+    text-decoration:none;
+    background:#2E7D32;
+    color:white;
+    padding:10px 18px;
+    border-radius:5px;
+}
+
+.back:hover{
+    background:#1B5E20;
+}
+
+.container{
+    width:90%;
+    margin:30px auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
+
+.card{
+    width:280px;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+    position:relative;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.details{
+    padding:15px;
+}
+
+.details h3{
+    color:#2E7D32;
+    margin-bottom:10px;
+}
+
+.details p{
+    margin:8px 0;
+}
+
+.price{
+    color:red;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2E7D32;
+    color:white;
+    padding:10px;
+    border-radius:5px;
+    margin-top:15px;
+}
+
+.btn:hover{
+    background:#1B5E20;
+}
+
+/* Remove Icon */
+
+.remove{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:30px;
+    height:30px;
+    background:red;
+    color:white;
+    text-align:center;
+    line-height:30px;
+    text-decoration:none;
+    border-radius:50%;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.remove:hover{
+    background:darkred;
+}
+
+.empty{
+    width:100%;
+    text-align:center;
+    font-size:25px;
+    color:red;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="/temp/user/" class="back">← Back</a>
+
+<header>
+    <h1>❤️ My Wishlist</h1>
+</header>
+
+<div class="container">
+
+{% for i in aa %}
+
+<div class="card">
+
+    <!-- Remove Button -->
+    <a href="/product/remove_wishlist/{{ i.product_id }}"
+       class="remove"
+       onclick="return confirm('Remove this product from wishlist?')">
+       ×
+    </a>
+
+    <img src="/static/{{ i.photo }}" alt="{{ i.product_name }}">
+
+    <div class="details">
+
+        <h3>{{ i.product_name }}</h3>
+
+        <p><b>Category :</b> {{ i.category }}</p>
+
+        <p>{{ i.description }}</p>
+
+        <p><b>Available :</b> {{ i.quantity }} {{ i.unit }}</p>
+
+        <p class="price">₹ {{ i.price }}</p>
+
+        <a href="/order/order/{{ i.product_id }}" class="btn">
+            Buy Now
+        </a>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<div class="empty">
+    No Products in Wishlist
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

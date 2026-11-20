@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post Reply to Farmer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+background:linear-gradient(-45deg,#d4fc79,#96e6a1,#b7e4c7,#95d5b2);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+body::before,
+body::after{
+content:"🌿";
+position:absolute;
+font-size:40px;
+opacity:.18;
+animation:leafFloat 12s linear infinite;
+}
+
+body::before{
+left:8%;
+top:-10%;
+}
+
+body::after{
+right:10%;
+animation-delay:6s;
+}
+
+@keyframes leafFloat{
+from{
+transform:translateY(-120px) rotate(0deg);
+}
+to{
+transform:translateY(110vh) rotate(360deg);
+}
+}
+
+.back-btn{
+position:fixed;
+top:20px;
+left:20px;
+text-decoration:none;
+background:#2e7d32;
+color:white;
+padding:12px 22px;
+border-radius:30px;
+font-weight:600;
+transition:.3s;
+box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+.back-btn:hover{
+background:#1b5e20;
+transform:translateY(-3px);
+}
+
+.form-card{
+width:100%;
+max-width:650px;
+background:rgba(255,255,255,.96);
+padding:35px;
+border-radius:22px;
+box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
+
+h3{
+text-align:center;
+color:#1b5e20;
+margin-bottom:25px;
+font-size:28px;
+}
+
+table{
+width:100%;
+}
+
+td{
+padding:12px;
+}
+
+td:first-child{
+width:30%;
+font-weight:600;
+color:#2e7d32;
+}
+
+textarea{
+width:100%;
+padding:14px;
+border:2px solid #c8e6c9;
+border-radius:12px;
+background:#f9fff9;
+resize:none;
+}
+
+textarea:focus{
+outline:none;
+border-color:#43a047;
+}
+
+input[type=submit]{
+width:100%;
+padding:14px;
+border:none;
+border-radius:30px;
+background:linear-gradient(90deg,#43a047,#2e7d32);
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+input[type=submit]:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(46,125,50,.35);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="/complaint/v_com2/" class="back-btn">← Back Home</a>
+
+<div class="form-card">
+
+<form method="post">
+
+{% csrf_token %}
+
+<h3>💬 Post Reply to Farmer</h3>
+
+<table>
+
+<tr>
+<td>Reply</td>
+<td>
+<textarea rows="5" name="reply" placeholder="Write your reply here..."></textarea>
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+<input type="submit" value="SUBMIT">
+</td>
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+</body>
+</html>

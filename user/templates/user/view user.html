@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View User</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    padding:30px;
+    background:linear-gradient(-45deg,#d4fc79,#96e6a1,#c8e6c9,#e8f5e9);
+    background-size:400% 400%;
+    animation:bgAnimation 12s ease infinite;
+}
+
+@keyframes bgAnimation{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Floating Leaves */
+
+body::before,
+body::after{
+    content:"🌿";
+    position:fixed;
+    font-size:40px;
+    opacity:.15;
+    pointer-events:none;
+    animation:leafFall 12s linear infinite;
+}
+
+body::before{
+    left:8%;
+    top:-10%;
+}
+
+body::after{
+    right:10%;
+    animation-delay:6s;
+}
+
+@keyframes leafFall{
+    from{
+        transform:translateY(-120px) rotate(0deg);
+    }
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+/* Header */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.back-btn{
+    text-decoration:none;
+    background:#2e7d32;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:30px;
+    font-weight:600;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#1b5e20;
+    transform:translateY(-3px);
+}
+
+.header h2{
+    font-size:32px;
+    color:#1b5e20;
+    font-weight:700;
+}
+
+/* Table */
+
+.table-container{
+    background:rgba(255,255,255,.95);
+    padding:25px;
+    border-radius:20px;
+    overflow-x:auto;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    animation:fadeIn .8s;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+table{
+    width:100%;
+    min-width:1100px;
+    border-collapse:collapse;
+}
+
+th{
+    background:#2e7d32;
+    color:white;
+    padding:15px;
+    white-space:nowrap;
+}
+
+td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+    color:#444;
+}
+
+tr:nth-child(even){
+    background:#f8fff8;
+}
+
+tr:hover{
+    background:#e8f5e9;
+    transition:.3s;
+}
+
+@media(max-width:768px){
+
+.header{
+    flex-direction:column;
+    gap:15px;
+}
+
+.header h2{
+    font-size:24px;
+}
+
+.back-btn{
+    align-self:flex-start;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<a href="/temp/admin/" class="back-btn">← Back Home</a>
+
+<h2>👥 View Users</h2>
+
+</div>
+
+<div class="table-container">
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Post</th>
+<th>District</th>
+<th>PIN</th>
+<th>Phone Number</th>
+<th>Email</th>
+<th>Username</th>
+</tr>
+
+{% for i in aa %}
+
+<tr>
+
+<td>{{ i.name }}</td>
+<td>{{ i.gender }}</td>
+<td>{{ i.place }}</td>
+<td>{{ i.post }}</td>
+<td>{{ i.district }}</td>
+<td>{{ i.pin }}</td>
+<td>{{ i.phone_number }}</td>
+<td>{{ i.email }}</td>
+<td>{{ i.username }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

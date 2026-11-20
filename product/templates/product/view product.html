@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Product Details</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    padding:30px;
+    background:linear-gradient(-45deg,#d4fc79,#96e6a1,#c8e6c9,#e8f5e9);
+    background-size:400% 400%;
+    animation:bgAnimation 12s ease infinite;
+}
+
+@keyframes bgAnimation{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Floating Leaves */
+
+body::before,
+body::after{
+    content:"🌿";
+    position:fixed;
+    font-size:40px;
+    opacity:.15;
+    pointer-events:none;
+    animation:leafFall 12s linear infinite;
+}
+
+body::before{
+    left:8%;
+    top:-10%;
+}
+
+body::after{
+    right:10%;
+    animation-delay:6s;
+}
+
+@keyframes leafFall{
+    from{
+        transform:translateY(-120px) rotate(0deg);
+    }
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+/* Header */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.back-btn{
+    text-decoration:none;
+    background:#2e7d32;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:30px;
+    font-weight:600;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#1b5e20;
+    transform:translateY(-3px);
+}
+
+.header h2{
+    font-size:32px;
+    color:#1b5e20;
+    font-weight:700;
+}
+
+/* Table */
+
+.table-container{
+    background:rgba(255,255,255,.95);
+    padding:25px;
+    border-radius:20px;
+    overflow-x:auto;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    animation:fadeIn .8s;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+table{
+    width:100%;
+    min-width:1200px;
+    border-collapse:collapse;
+}
+
+th{
+    background:#2e7d32;
+    color:white;
+    padding:15px;
+    white-space:nowrap;
+}
+
+td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+    color:#444;
+}
+
+tr:nth-child(even){
+    background:#f8fff8;
+}
+
+tr:hover{
+    background:#e8f5e9;
+    transition:.3s;
+}
+
+img{
+    width:75px;
+    height:75px;
+    border-radius:10px;
+    object-fit:cover;
+    border:2px solid #c8e6c9;
+}
+
+/* Order Button */
+
+.order-btn{
+    text-decoration:none;
+    background:#43a047;
+    color:white;
+    padding:10px 18px;
+    border-radius:25px;
+    font-weight:600;
+    transition:.3s;
+    display:inline-block;
+}
+
+.order-btn:hover{
+    background:#1b5e20;
+    transform:scale(1.05);
+}
+
+@media(max-width:768px){
+
+.header{
+    flex-direction:column;
+    gap:15px;
+}
+
+.header h2{
+    font-size:24px;
+}
+
+.back-btn{
+    align-self:flex-start;
+}
+
+}
+   .product-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,320px));
+    gap:30px;
+    justify-content:center;
+}
+.product-card{
+
+    position:relative;
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+    transition:.4s;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+    box-shadow:0 25px 45px rgba(0,0,0,.18);
+
+}
+
+.product-image{
+    height:180px;
+    overflow:hidden;
+}
+
+.product-image img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+
+}
+
+.product-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.wishlist a{
+
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:28px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+.category{
+
+    display:inline-block;
+    margin:18px;
+    background:#E8F5E9;
+    color:#2E7D32;
+    padding:6px 16px;
+    border-radius:30px;
+    font-weight:600;
+    font-size:13px;
+
+}
+
+.product-card h3{
+
+    margin:0 18px;
+    color:#222;
+    font-size:24px;
+
+}
+
+.farmer{
+
+    margin:12px 18px;
+    color:#777;
+
+}
+
+.desc{
+
+    margin:0 18px;
+    color:#666;
+    line-height:24px;
+    min-height:70px;
+
+}
+
+.price{
+
+    margin:18px;
+    color:#2E7D32;
+    font-size:30px;
+    font-weight:bold;
+
+}
+
+.price span{
+
+    color:#666;
+    font-size:18px;
+
+}
+
+.stock{
+
+    margin:18px;
+    color:#777;
+    font-size:15px;
+
+}
+
+.order-btn{
+
+    display:block;
+    margin:20px;
+    text-align:center;
+    text-decoration:none;
+    padding:15px;
+    border-radius:40px;
+    background:linear-gradient(135deg,#43A047,#1B5E20);
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    transition:.4s;
+
+}
+
+.order-btn:hover{
+
+    letter-spacing:1px;
+    transform:scale(1.03);
+
+}
+    /* Search Box */
+
+.search-box{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-bottom:25px;
+}
+
+.search-box input{
+    width:60%;
+    max-width:600px;
+    padding:14px 22px;
+    border:2px solid #c8e6c9;
+    border-radius:30px;
+    outline:none;
+    background:white;
+    color:#333;
+    font-size:16px;
+    font-family:'Poppins',sans-serif;
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
+    transition:.3s;
+}
+
+.search-box input:focus{
+    border-color:#2e7d32;
+    box-shadow:0 8px 25px rgba(46,125,50,.20);
+}
+
+.search-box input::placeholder{
+    color:#888;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<a href="/temp/user/" class="back-btn">← Back Home</a>
+
+<h2>🛒 View Product Details</h2>
+
+</div>
+<div class="search-box">
+    <input type="text"
+           id="productSearch"
+           placeholder="🔍 Search products...">
+</div>
+
+<div class="table-container">
+
+<div class="product-container">
+
+{% for i in aa %}
+
+<div class="product-card">
+
+<div class="wishlist">
+    <a href="/product/wishlist/{{ i.product_id }}">
+
+        {% if i.product_id in wishlist_ids %}
+            <span style="color:red;">❤</span>
+        {% else %}
+            <span style="color:gray;">❤</span>
+        {% endif %}
+
+    </a>
+</div>
+<div class="product-image">
+    <img src="/static/{{ i.photo }}">
+</div>
+
+<div class="category">
+    🌱 {{ i.category }}
+</div>
+
+<h3>{{ i.product_name }}</h3>
+
+{#<p class="farmer">#}
+{#👨‍🌾 {{ i.farmer.farmer_name }}#}
+{#</p>#}
+
+<p class="desc">
+{{ i.description }}
+</p>
+
+<div class="price">
+₹ {{ i.price }}
+<span>/ {{ i.unit }}</span>
+</div>
+
+<div class="stock">
+📦 {{ i.quantity }} Available
+</div>
+
+<a href="/order/order/{{ i.product_id }}" class="order-btn">
+🛒 Order Now
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+</div>
+
+</body>
+
+
+
+
+
+
+
+
+
+<script>
+
+$("#productSearch").on("keyup", function(){
+
+    var search = $(this).val();
+
+    $.ajax({
+
+        url: "/product/productsearch/",
+
+        type: "GET",
+
+        data: {
+            search: search
+        },
+
+        success: function(data){
+
+            $(".product-container").empty();
+
+           $.each(data.products, function(index, product){
+
+    var heartColor = "gray";
+
+    if (data.wishlist_ids.includes(product.product_id)) {
+        heartColor = "red";
+    }
+
+   $(".product-container").append(`
+
+    <div class="product-card">
+
+        <div class="wishlist">
+            <a href="/product/wishlist/${product.product_id}">
+                <span style="color:${heartColor};">
+                    ❤
+                </span>
+            </a>
+        </div>
+
+        <div class="product-image">
+            <img src="/static/${product.photo}">
+        </div>
+                        <div class="category">
+                            🌱 ${product.category}
+                        </div>
+
+                        <h3>${product.product_name}</h3>
+                        <p class="farmer">👨‍🌾 ${product.farmer_name}</p>
+
+                        <p class="desc">
+                            ${product.description}
+                        </p>
+
+                        <div class="price">
+                            ₹ ${product.price}
+                            <span>/ ${product.unit}</span>
+                        </div>
+
+                        <div class="stock">
+                            📦 ${product.quantity} Available
+                        </div>
+
+                        <a href="/order/order/${product.product_id}" class="order-btn">
+    🛒 Order Now
+</a>
+
+                    </div>
+
+                `);
+
+            });
+
+        }
+
+    });
+
+});
+
+</script>
+</html>

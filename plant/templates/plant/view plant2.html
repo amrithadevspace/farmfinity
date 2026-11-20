@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Plant Details</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    padding:30px;
+    background:linear-gradient(-45deg,#d4fc79,#96e6a1,#c8e6c9,#e8f5e9);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* floating leaves */
+body::before,
+body::after{
+    content:"🌿";
+    position:fixed;
+    font-size:40px;
+    opacity:.15;
+    pointer-events:none;
+    animation:floatPlant 12s linear infinite;
+}
+
+body::before{
+    left:8%;
+    top:-10%;
+}
+
+body::after{
+    right:10%;
+    animation-delay:6s;
+}
+
+@keyframes floatPlant{
+    0%{transform:translateY(-120px) rotate(0deg);}
+    100%{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* header */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.back-btn{
+    text-decoration:none;
+    background:#2e7d32;
+    color:white;
+    padding:12px 22px;
+    border-radius:30px;
+    font-weight:600;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#1b5e20;
+    transform:translateY(-3px);
+}
+
+.header h2{
+    color:#1b5e20;
+    font-size:32px;
+    font-weight:700;
+}
+
+/* table */
+.table-container{
+    background:rgba(255,255,255,.95);
+    padding:25px;
+    border-radius:20px;
+    overflow-x:auto;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    animation:fadeIn .8s;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+table{
+    width:100%;
+    min-width:1100px;
+    border-collapse:collapse;
+}
+
+th{
+    background:#2e7d32;
+    color:white;
+    padding:15px;
+    white-space:nowrap;
+}
+
+td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+    color:#444;
+}
+
+tr:nth-child(even){
+    background:#f8fff8;
+}
+
+tr:hover{
+    background:#e8f5e9;
+    transition:.3s;
+}
+
+/* image */
+td img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:10px;
+    border:2px solid #c8e6c9;
+}
+
+/* responsive */
+@media(max-width:768px){
+
+.header{
+    flex-direction:column;
+    gap:15px;
+}
+
+.header h2{
+    font-size:24px;
+}
+
+.back-btn{
+    align-self:flex-start;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<a href="/temp/user/" class="back-btn">← Back Home</a>
+
+<h2>🌱 View Plant Details</h2>
+
+</div>
+
+<div class="table-container">
+
+<table>
+
+<tr>
+<th>Date</th>
+<th>Krishibhavan Name</th>
+<th>Plant Name</th>
+<th>Category</th>
+<th>Description</th>
+<th>Price</th>
+<th>Growing Season</th>
+<th>Phone Number</th>
+<th>Photo</th>
+</tr>
+
+{% for i in aa %}
+
+<tr>
+<td>{{ i.date }}</td>
+<td>{{ i.krishibhavan.krishibhavan_name }}</td>
+<td>{{ i.plant_name }}</td>
+<td>{{ i.category }}</td>
+<td>{{ i.discription }}</td>
+<td>{{ i.price }}</td>
+<td>{{ i.growing_season }}</td>
+<td>{{ i.phone_number }}</td>
+<td>
+    <img src="/static/{{ i.photo}}"width="200" height="200">
+</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

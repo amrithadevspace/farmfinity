@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <title>Farmfinity User Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Construction Company Website Template" name="keywords">
+        <meta content="Construction Company Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="/static/img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="/static/lib/flaticon/font/flaticon.css" rel="stylesheet">
+        <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="/static/lib/slick/slick.css" rel="stylesheet">
+        <link href="/static/lib/slick/slick-theme.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="/static/css/style.css" rel="stylesheet">
+        <style>
+
+        /*.about-section{
+            padding:80px 0;
+            background:#f8faf7;
+        }
+*/
+        /*.about-image img{
+            width:100%;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.15);
+        }
+*/
+        .about-tag{
+            color:#4CAF50;
+            font-weight:600;
+            font-size:18px;
+        }
+
+        .about-content h2{
+            font-size:48px;
+            font-weight:700;
+            color:#0b1f3a;
+            margin:15px 0 25px;
+        }
+
+        .about-content p{
+            color:#666;
+            font-size:17px;
+            line-height:1.8;
+        }
+
+        .feature-box{
+            display:inline-block;
+            background:white;
+            padding:10px 15px;
+            margin:5px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .about-btn{
+            display:inline-block;
+            margin-top:20px;
+            padding:12px 30px;
+            background:#4CAF50;
+            color:white;
+            text-decoration:none;
+            border-radius:25px;
+        }
+
+
+
+
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+.header{
+    background:#1e3a8a;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+}
+.admin-container{
+    width:90%;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.admin-card{
+    background:#fff;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+}
+
+.admin-card:hover{
+    transform:translateY(-8px);
+}
+
+.icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#333;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.btn{
+    text-decoration:none;
+    color:white;
+    padding:12px 22px;
+    border-radius:8px;
+    display:inline-block;
+    font-weight:bold;
+}
+
+.complaint{
+    background:#ef4444;
+}
+
+.farmercomplaint{
+    background:#f97316;
+}
+
+.userfeedback{
+    background:#10b981;
+}
+
+.farmerfeedback{
+    background:#3b82f6;
+}
+
+.btn:hover{
+    opacity:0.9;
+}
+
+*/
+
+
+            .dashboard-section{
+    padding:60px 0;
+    background:#f4f8f2;
+}
+
+.card{
+    border:none;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card-body h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.card-body{
+    padding:30px;
+}
+
+
+.knowledge-section{
+    padding:80px 0;
+    background:linear-gradient(135deg,#2e7d32,#4caf50);
+}
+
+.knowledge-content{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    color:white;
+}
+
+.knowledge-icon{
+    width:100px;
+    height:100px;
+    line-height:100px;
+    margin:auto;
+    border-radius:50%;
+    background:rgba(255,255,255,0.2);
+    font-size:45px;
+    margin-bottom:25px;
+}
+
+.knowledge-content h2{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.knowledge-content p{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.knowledge-btn{
+    display:inline-block;
+    background:#fff;
+    color:#2e7d32;
+    padding:14px 35px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.knowledge-btn:hover{
+    background:#f5f5f5;
+    color:#1b5e20;
+}
+.footer-overlay{
+    background: rgba(0,0,0,0.82);
+    padding: 80px 0 30px;
+}
+
+.footer-content h2{
+    color:#7CFC00;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.footer-content p,
+.footer-contact p{
+    color:#ddd;
+    line-height:1.8;
+}
+
+.footer-section h4{
+    color:#fff;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+.footer-links{
+    list-style:none;
+    padding:0;
+}
+
+.footer-links li{
+    margin-bottom:12px;
+}
+
+.footer-links a{
+    color:#ccc;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#7CFC00;
+    padding-left:5px;
+}
+
+.footer-bottom p{
+    color:#bbb;
+    margin-top:15px;
+    font-size:14px;
+}
+
+.footer-section hr{
+    border-color:rgba(255,255,255,.15);
+    margin-top:40px;
+}
+.notification-message-box{
+    background:#ffffff;
+    border-radius:20px;
+    padding:20px 25px;
+    margin:40px auto;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    border-left:6px solid #4CAF50;
+    max-width:1000px;
+}
+
+.message-icon{
+    width:60px;
+    height:60px;
+    background:#e8f5e9;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    flex-shrink:0;
+}
+
+.message-content{
+    flex:1;
+}
+
+.message-content h5{
+    color:#1b5e20;
+    margin-bottom:5px;
+    font-weight:700;
+}
+
+.message-content p{
+    margin:0;
+    color:#666;
+}
+
+.message-btn{
+    background:#4CAF50;
+    color:white;
+    padding:10px 20px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.message-btn:hover{
+    background:#2e7d32;
+    color:white;
+}
+
+.dashboard-card{
+    background:#fff;
+    border-radius:18px;
+    padding:30px 20px;
+    text-align:center;
+    height:100%;
+    border:none;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:all .4s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.dashboard-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(90deg,#28a745,#8bc34a);
+}
+
+.dashboard-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.dashboard-card .icon{
+    font-size:55px;
+    margin-bottom:15px;
+    transition:.4s;
+}
+
+.dashboard-card:hover .icon{
+    transform:scale(1.15);
+}
+
+.dashboard-card h5{
+    font-size:22px;
+    font-weight:600;
+    color:#1f2937;
+    margin-bottom:10px;
+}
+
+.dashboard-card p{
+    color:#6b7280;
+    min-height:50px;
+    font-size:15px;
+}
+
+.dashboard-card .btn{
+    background:#28a745;
+    border:none;
+    padding:10px 25px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.dashboard-card .btn:hover{
+    background:#1e7e34;
+    transform:scale(1.05);
+}
+.dashboard-section{
+    padding:80px 0;
+    background:#f5f8f3;
+}
+
+.section-header p{
+    color:#28a745;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.section-header h2{
+    font-size:40px;
+    font-weight:700;
+    color:#1b4332;
+    margin-bottom:50px;
+}
+
+/* Dashboard Cards */
+.dashboard-card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:all .4s ease;
+    height:100%;
+    position:relative;
+}
+
+.dashboard-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(90deg,#28a745,#7cb342);
+}
+
+.dashboard-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.dashboard-card .card-body{
+    padding:35px 25px;
+}
+
+.dashboard-card .icon{
+    font-size:60px;
+    margin-bottom:15px;
+    transition:.4s;
+}
+
+.dashboard-card:hover .icon{
+    transform:scale(1.15) rotate(5deg);
+}
+
+.dashboard-card h5{
+    font-size:24px;
+    font-weight:700;
+    color:#1f2937;
+    margin-bottom:15px;
+}
+
+.dashboard-card p{
+    color:#6b7280;
+    font-size:15px;
+    line-height:1.7;
+    min-height:60px;
+}
+
+.dashboard-card .btn{
+    background:#28a745;
+    border:none;
+    border-radius:30px;
+    padding:10px 28px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.dashboard-card .btn:hover{
+    background:#1e7e34;
+    transform:scale(1.05);
+}
+
+/* Appearance Animation */
+.animate-card{
+    animation:fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/************ NAVBAR ************/
+
+.nav-bar{
+    background: #1B5E20;
+}
+
+.navbar-nav .nav-link{
+    color: white !important;
+    font-weight: 600;
+    padding: 15px 20px !important;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+.navbar-nav .nav-link:hover{
+    background: #43A047;
+    color: #fff !important;
+}
+
+.navbar-nav .nav-item{
+    margin-right: 10px;
+}
+
+
+/************ DROPDOWN ************/
+
+.dropdown-menu{
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    background: #ffffff;
+}
+
+.dropdown-item{
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: #2E7D32;
+    transition: 0.3s;
+}
+
+.dropdown-item:hover{
+    background: #E8F5E9;
+    color: #1B5E20;
+    padding-left: 25px;
+}
+
+
+/************ ACTIVE LINK ************/
+
+.navbar-nav .active{
+    background: #43A047;
+    border-radius: 8px;
+}
+
+
+/************ DROPDOWN ARROW ************/
+
+.dropdown-toggle::after{
+    margin-left: 8px;
+}
+
+
+/************ MOBILE ************/
+
+.navbar-toggler{
+    border: none;
+}
+
+.navbar-toggler:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+
+    </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <!-- Top Bar Start -->
+            <div class="top-bar">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <h1>FARMFINITY</h1>
+                                    <!-- <img src="img/logo.jpg" alt="Logo"> -->
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-7 d-none d-lg-block">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="top-bar-item">
+                                        <div class="top-bar-icon">
+                                            <!-- <i class="flaticon-calendar"></i> -->
+                                        </div>
+                                        <!-- <div class="top-bar-text">
+                                            <h3>Opening Hour</h3>
+                                            <p>Mon - Fri, 8:00 - 9:00</p>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="top-bar-item">
+                                        <div class="top-bar-icon">
+                                            <!-- <i class="flaticon-call"></i> -->
+                                        </div>
+                                        <!-- <div class="top-bar-text">
+                                            <h3>Call Us</h3>
+                                            <p>+012 345 6789</p>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="top-bar-item">
+                                        <div class="top-bar-icon">
+                                            <i class="flaticon-send-mail"></i>
+                                        </div>
+                                        <div class="top-bar-text">
+                                            <h3>Email Us</h3>
+                                            <p>farmfinity@gmail.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Top Bar End -->
+
+            <!-- Nav Bar Start -->
+            <div class="nav-bar">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                        <a href="#" class="navbar-brand">MENU</a>
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                            <div class="navbar-nav mr-auto">
+                                <a href="" class="nav-item nav-link active">Home</a>
+                                <!-- <a href="" class="nav-item nav-link"></a> -->
+                                <!-- <a href="service.html" class="nav-item nav-link">Service</a> -->
+                                <!-- <a href="team.html" class="nav-item nav-link">Team</a> -->
+                                <!-- <a href="portfolio.html" class="nav-item nav-link">Project</a> -->
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">POST</a>
+                                    <div class="dropdown-menu">
+                                        <!-- <a href="blog.html" class="dropdown-item">User</a> -->
+                                        <a href="/feedback/feed/" class="dropdown-item">Feedback</a>
+                                        <a href="/complaint/com/" class="dropdown-item">Complaint</a>
+                                        <a href="/complaint/f_com/" class="dropdown-item">Complaint About Farmer</a>
+                                    </div>
+                                </div>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">View</a>
+                                    <div class="dropdown-menu">
+                                        <!-- <a href="blog.html" class="dropdown-item">User</a> -->
+                                        <a href="/complaint/v_rep/" class="dropdown-item">Complaint Reply</a>
+                                        <a href="/complaint/v_frep/" class="dropdown-item">Farmer Complaint Reply</a>
+                                    </div>
+
+
+                                <!-- <a href="contact.html" class="nav-item nav-link"></a> -->
+                            </div>
+
+                                <!-- <a href="contact.html" class="nav-item nav-link">LOGOUT</a> -->
+
+
+                            <!-- <div class="ml-auto">
+                                <a class="btn" href="#">LOGIN NOW</a>
+                            </div> -->
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+            <!-- Nav Bar End -->
+
+
+            <!-- Carousel Start -->
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <!-- <ol class="carousel-indicators"> -->
+                    <!-- <li data-target="#carousel" data-slide-to="0" class="active"></li> -->
+                    <!-- <li data-target="#carousel" data-slide-to="1"></li> -->
+                    <!-- <li data-target="#carousel" data-slide-to="2"></li> -->
+                <!-- </ol> -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/static/img/main1.jpg" alt="Carousel Image">
+                        <div class="carousel-caption">
+                            <h1 class="animated fadeInLeft">🌱Welcome To Farmfinity </h1>
+                            <p class="animated fadeInRight">Your Trusted Agricultural Marketplace</p>
+
+                            <!-- <h3> Get Started</h3> -->
+                            <!-- <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">LOGIN</a> -->
+                        </div>
+                    </div>
+
+                   <!--  <div class="carousel-item">
+                        <img src="img/carousel-2.jpg" alt="Carousel Image">
+                        <div class="carousel-caption">
+                            <p class="animated fadeInRight"></p>
+                            <h1 class="animated fadeInLeft">Fresh Products Direct From Farmers</h1>
+                           <h3>🌱 Get Started</h3>
+                            <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">LOGIN</a>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="carousel-item"> -->
+                        <!-- <img src="img/carousel-3.jpg" alt="Carousel Image"> -->
+                        <!-- <div class="carousel-caption"> -->
+                            <!-- <p class="animated fadeInRight">Connecting farmers and consumers</p> -->
+                            <!-- <h1 class="animated fadeInLeft">Through aTrusted Agricultural Marketplace</h1> -->
+
+
+                            <!-- <h3>Get Started</h3> -->
+                            <!-- <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">LOGIN</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a> -->
+            </div>
+            <!-- Carousel End -->
+            <div class="container py-5">
+
+
+        <!-- Add Product -->
+        <section class="dashboard-section py-5">
+    <div class="container">
+
+        <div class="section-header text-center mb-5">
+            <p>User Dashboard</p>
+            <h2>Explore Farm Products & Services</h2>
+        </div>
+
+        <div class="row">
+
+            <!-- View Products -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card dashboard-card animate-card">
+                    <div class="card-body text-center">
+                        <div class="icon">🛍️</div>
+                        <h5>View Products</h5>
+                        <p>
+                            Browse fresh vegetables, fruits and other
+                            farm products directly from farmers.
+                        </p>
+                        <a href="/product/v_prod/" class="btn btn-success">
+                            Explore
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order History -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card dashboard-card animate-card">
+                    <div class="card-body text-center">
+                        <div class="icon">📦</div>
+                        <h5>Order History</h5>
+                        <p>
+                            View your previous purchases and
+                            track completed orders easily.
+                        </p>
+                        <a href="/order/v_history/" class="btn btn-success">
+                            View Orders
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wishlist -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card dashboard-card animate-card">
+                    <div class="card-body text-center">
+                        <div class="icon">❤️</div>
+                        <h5>Wishlist</h5>
+                        <p>
+                            Save your favorite products and
+                            access them anytime for purchase.
+                        </p>
+                        <a href="/product/v_wishlist/" class="btn btn-success">
+                            Open Wishlist
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+        <!-- Payments -->
+        <!-- <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>💰</h1>
+                    <h5>Payments</h5>
+                    <p>View payment history.</p>
+                    <a href="#" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="row justify-content-center mt-4">
+    <div class="col-lg-3 col-md-6">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h1>🎥</h1>
+                <h5>Farming Videos & Articles</h5>
+                <p>Upload farming videos,Share farming knowledge</p>
+                <a href="#" class="btn btn-success">Open</a>
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+
+
+     <!-- Videos -->
+       <!--  <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>🎥</h1>
+                    <h5>Farming Videos</h5>
+                    <p>Upload farming videos.</p>
+                    <a href="#" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Articles -->
+        <!-- <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>📖</h1>
+                    <h5>Articles</h5>
+                    <p>Share farming knowledge.</p>
+                    <a href="#" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div>
+ -->
+        <!-- Fertilizer -->
+        <!-- <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>🌱</h1>
+                    <h5>Fertilizers</h5>
+                    <p>View fertilizer details.</p>
+                    <a href="#" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Seeds -->
+        <!-- <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>🌾</h1>
+                    <h5>Seeds</h5>
+                    <p>Explore seed information.</p>
+                    <a href="#" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Plants -->
+       <!--  <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>🪴</h1>
+                    <h5>Plants</h5>
+                    <p>View plant details.</p>
+                    <a href="#" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Services -->
+        <!-- <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>🛠</h1>
+                    <h5>Services</h5>
+                    <p>View available services.</p>
+                    <a href="#" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div>
+ -->
+        <!-- Complaints -->
+       <!--  <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>💬</h1>
+                    <h5>Complaints</h5>
+                    <p>Post complaints & view replies.</p>
+                    <a href="#" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div>
+ -->
+        <!-- Feedback -->
+        <!-- <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>⭐</h1>
+                    <h5>Feedback</h5>
+                    <p>Share your experience.</p>
+                    <a href="#" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+</div>
+
+<div class="section-header text-center">
+        <h2>Agricultural Resources</h2>
+        <p>Essential information and support for better farming practices.</p>
+    </div>
+
+    <div class="row">
+
+        <!-- Add Product -->
+
+        <!-- View Products -->
+
+        <!-- Fertilizer -->
+
+        <!-- <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>🎥</h1>
+                    <h5>Upload farming videos,Share farming knowledge</h5>
+                    <p>Farming Videos & Articles</p>
+                    <a href="#" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Seeds -->
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>🌾</h1>
+                    <h5>Seeds</h5>
+                    <p>Explore seed information.</p>
+                    <a href="/seed/v_seed2/" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plants -->
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>🪴</h1>
+                    <h5>Plants</h5>
+                    <p>View plant details.</p>
+                    <a href="/plant/v_plant2/" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>🛠</h1>
+                    <h5>Services</h5>
+                    <p>View available services.</p>
+                    <a href="/service/v_service2/" class="btn btn-success">Open</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h1>🎥</h1>
+                    <h5>Explore farming techniques</h5>
+                    <p>Farming Videos & Articles</p>
+                    <a href="/farming_details/v_farming_far/" class="btn btn-success">Farmer</a>
+                    <a href="/farming_details/v_farming_kri/" class="btn btn-success">Krishibhavan</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Complaints -->
+
+    </div>
+</div>
+
+
+
+
+            <!-- Feature Start-->
+            <!-- <div class="feature wow fadeInUp" data-wow-delay="0.1s">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="flaticon-worker"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>🌱 Expert Guidance</h3>
+                                    <p>Get expert agricultural guidance and support from Krishi Bhavan to improve farming practices and crop productivity.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="flaticon-building"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>🚜 Smart Farming</h3>
+                                    <p>Explore modern farming techniques, videos, and articles to enhance agricultural knowledge and efficiency.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="flaticon-call"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>🥕 Fresh Farm Products</h3>
+                                    <p>Buy fresh vegetables, fruits, and farm products directly from trusted local farmers.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Feature End-->
+
+
+            <!-- About Start -->
+            <!-- <div class="about-section">
+    <div class="container">
+        <div class="row">
+
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-body text-center">
+                <h3>📦 Products</h3>
+                <p>View all products added by farmers</p>
+                <a href="view_product" class="btn btn-success">
+                    View Products
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-body text-center">
+                <h3>🛒 Orders</h3>
+                <p>Manage customer orders</p>
+                <a href="view_order" class="btn btn-primary">
+                    View Orders
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div> -->
+            <!-- <div class="col-lg-5"> -->
+                <!-- <div class="about-image">
+                    <img src="img/about.jpg" alt="Farmfinity">
+                </div> -->
+            <!-- </div> -->
+
+            <!-- <div class="col-lg-7"> -->
+                <!-- <div class="about-content"> -->
+
+
+                    <!-- <span class="about-tag">🌱 Welcome to Farmfinity</span>
+
+                    <h2>Empowering Farmers,<br> Connecting Communities</h2>
+
+                    <p>
+                        Farmfinity is a modern agricultural platform that connects
+                        farmers, consumers, and Krishi Bhavan through a single
+                        digital ecosystem.
+                    </p>
+
+                    <p>
+                        We promote direct farm-to-customer sales, agricultural
+                        awareness, farming resources, and sustainable growth for
+                        the farming community.
+                    </p>
+
+                    <div class="features">
+                        <! <div class="feature-box">
+    🚜 Direct Farmer Marketplace
+</div>
+
+<div class="feature-box">
+    🌾 Farming Videos & Articles
+</div>
+
+<div class="feature-box">
+    📢 Krishi Bhavan Support
+</div>
+
+<div class="feature-box">
+    🌱 Quality Seeds & Plants
+</div>
+
+<div class="feature-box">
+    🧪 Fertilizer Information
+</div>
+
+<div class="feature-box">
+    🛒 Easy Online Ordering
+</div>
+
+<div class="feature-box">
+    💳 Secure Digital Payments
+</div>
+
+<div class="feature-box">
+    🔔 Real-Time Notifications
+</div>
+
+<div class="feature-box">
+    📚 Modern Farming Techniques
+</div>
+
+<div class="feature-box">
+    🤝 Farmer-Consumer Connection
+</div> -->
+                    <!-- </div> -->
+
+                    <!-- <a href="#" class="about-btn">Explore More</a> -->
+
+                <!-- </div> -->
+            <!-- </div> -->
+
+        <!-- </div> -->
+    <!-- </div> -->
+<!-- </div> -->
+            <!-- About End -->
+
+
+            <!-- Fact Start -->
+           <!--  <div class="fact">
+                <div class="admin-container">
+
+    <div class="admin-card">
+        <div class="icon">📢</div>
+        <h3>View Complaints</h3>
+        <p>Check complaints submitted by users.</p>
+        <a href="view_complaints.php" class="btn btn-danger">
+            View Complaints
+        </a>
+    </div>
+
+    <div class="admin-card">
+        <div class="icon">👨‍🌾</div>
+        <h3>Farmer Complaints</h3>
+        <p>View complaints against farmers.</p>
+        <a href="farmer_complaints.php" class="btn btn-warning">
+            View Complaints
+        </a>
+    </div>
+
+    <div class="admin-card">
+        <div class="icon">⭐</div>
+        <h3>User Feedback</h3>
+        <p>View feedback from users.</p>
+        <a href="user_feedback.php" class="btn btn-success">
+            View Feedback
+        </a>
+    </div>
+
+    <div class="admin-card">
+        <div class="icon">🌾</div>
+        <h3>Farmer Feedback</h3>
+        <p>View feedback from farmers.</p>
+        <a href="farmer_feedback.php" class="btn btn-primary">
+            View Feedback
+        </a>
+    </div>
+
+</div>v>
+            </div> -->
+            <!-- Fact End -->
+
+
+            <!-- Service Start -->
+
+                    <!-- <div class="section-header text-center">
+                        <p>Our Services</p>
+                        <h2>We Provide Services</h2>
+                    </div>
+                    <div class="row">
+                       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="service-item">
+                                <div class="service-img">
+                                    <img src="img/service-2.jpg" alt="Image">
+                                    <div class="service-overlay">
+                                        <p>
+                                            Access farming videos, articles, and modern agricultural techniques shared by Krishi Bhavan experts.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="service-text">
+                                    <h3>🌱Farming Resources</h3>
+                                    <a class="btn" href="img/service-2.jpg" data-lightbox="service">+</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="service-item">
+                                <div class="service-img">
+                                    <img src="img/service-2.jpg" alt="Image">
+                                    <div class="service-overlay">
+                                        <p>
+                                            Explore quality seeds and fertilizer information to improve crop productivity and farming success.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="service-text">
+                                    <h3>🌾Seeds & Fertilizers</h3>
+                                    <a class="btn" href="img/service-2.jpg" data-lightbox="service">+</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="service-item">
+                                <div class="service-img">
+                                    <img src="img/service-3.jpg" alt="Image">
+                                    <div class="service-overlay">
+                                        <p>
+                                            Buy fresh vegetables, fruits, and agricultural products directly from trusted local farmers.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="service-text">
+                                    <h3>🚜 Products Marketplace</h3>
+                                    <a class="btn" href="img/service-3.jpg" data-lightbox="service">+</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="service-item">
+                                <div class="service-img">
+                                    <img src="img/service-4.jpg" alt="Image">
+                                    <div class="service-overlay">
+                                        <p>Learn modern farming techniques through videos and articles provided by Krishi Bhavan.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="service-text">
+                                    <h3>🌱 Farming Methods</h3>
+                                    <a class="btn" href="img/service-4.jpg" data-lightbox="service">+</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="service-item">
+                                <div class="service-img">
+                                    <img src="img/service-5.jpg" alt="Image">
+                                    <div class="service-overlay">
+                                        <p>
+                                           Purchase fresh farm products directly from farmers at fair prices.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="service-text">
+                                    <h3>🛒 Fresh Products</h3>
+                                    <a class="btn" href="img/service-5.jpg" data-lightbox="service">+</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="service-item">
+                                <div class="service-img">
+                                    <img src="img/service-6.jpg" alt="Image">
+                                    <div class="service-overlay">
+                                        <p>
+                                            Get notifications, seeds, fertilizers, plant information, and farming support services.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="service-text">
+                                    <h3>📢 Agricultural Services</h3>
+                                    <a class="btn" href="img/service-6.jpg" data-lightbox="service">+</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+ -->                </div>
+            </div>
+            <!-- Service End -->
+
+
+            <!-- Video Start -->
+           <!--  <div class="video wow fadeIn" data-wow-delay="0.1s">
+                <div class="container">
+                    <button type="button" class="btn-play" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>         -->
+                            <!-- 16:9 aspect ratio -->
+                           <!--  <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <-- </div> --> -->
+            <!-- Video End -->
+
+
+            <!-- Team Start -->
+            <!-- <div class="team">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <p>Our Team</p>
+                        <h2>Meet Our Engineer</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="team-item">
+                                <div class="team-img">
+                                    <img src="img/team-1.jpg" alt="Team Image">
+                                </div>
+                                <div class="team-text">
+                                    <h2>Adam Phillips</h2>
+                                    <p>CEO & Founder</p>
+                                </div>
+                                <div class="team-social">
+                                    <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="team-item">
+                                <div class="team-img">
+                                    <img src="img/team-2.jpg" alt="Team Image">
+                                </div>
+                                <div class="team-text">
+                                    <h2>Dylan Adams</h2>
+                                    <p>Civil Engineer</p>
+                                </div>
+                                <div class="team-social">
+                                    <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="team-item">
+                                <div class="team-img">
+                                    <img src="img/team-3.jpg" alt="Team Image">
+                                </div>
+                                <div class="team-text">
+                                    <h2>Jhon Doe</h2>
+                                    <p>Interior Designer</p>
+                                </div>
+                                <div class="team-social">
+                                    <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="team-item">
+                                <div class="team-img">
+                                    <img src="img/team-4.jpg" alt="Team Image">
+                                </div>
+                                <div class="team-text">
+                                    <h2>Josh Dunn</h2>
+                                    <p>Painter</p>
+                                </div>
+                                <div class="team-social">
+                                    <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Team End -->
+
+
+            <!-- FAQs Start -->
+            <!-- <div class="faqs">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <p>Frequently Asked Question</p>
+                        <h2>You May Ask</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="accordion-1">
+                                <div class="card wow fadeInLeft" data-wow-delay="0.1s">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne">
+                                            Lorem ipsum dolor sit amet?
+                                        </a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse" data-parent="#accordion-1">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card wow fadeInLeft" data-wow-delay="0.2s">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseTwo">
+                                            Lorem ipsum dolor sit amet?
+                                        </a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" data-parent="#accordion-1">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card wow fadeInLeft" data-wow-delay="0.3s">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseThree">
+                                            Lorem ipsum dolor sit amet?
+                                        </a>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" data-parent="#accordion-1">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card wow fadeInLeft" data-wow-delay="0.4s">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseFour">
+                                            Lorem ipsum dolor sit amet?
+                                        </a>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" data-parent="#accordion-1">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card wow fadeInLeft" data-wow-delay="0.5s">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseFive">
+                                            Lorem ipsum dolor sit amet?
+                                        </a>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" data-parent="#accordion-1">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="accordion-2">
+                                <div class="card wow fadeInRight" data-wow-delay="0.1s">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseSix">
+                                            Lorem ipsum dolor sit amet?
+                                        </a>
+                                    </div>
+                                    <div id="collapseSix" class="collapse" data-parent="#accordion-2">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card wow fadeInRight" data-wow-delay="0.2s">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseSeven">
+                                            Lorem ipsum dolor sit amet?
+                                        </a>
+                                    </div>
+                                    <div id="collapseSeven" class="collapse" data-parent="#accordion-2">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseEight">
+                                            Lorem ipsum dolor sit amet?
+                                        </a>
+                                    </div>
+                                    <div id="collapseEight" class="collapse" data-parent="#accordion-2">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card wow fadeInRight" data-wow-delay="0.4s">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseNine">
+                                            Lorem ipsum dolor sit amet?
+                                        </a>
+                                    </div>
+                                    <div id="collapseNine" class="collapse" data-parent="#accordion-2">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card wow fadeInRight" data-wow-delay="0.5s">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseTen">
+                                            Lorem ipsum dolor sit amet?
+                                        </a>
+                                    </div>
+                                    <div id="collapseTen" class="collapse" data-parent="#accordion-2">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- FAQs End -->
+
+
+            <!-- Testimonial Start -->
+             <div class="testimonial wow fadeIn" data-wow-delay="0.1s">
+                <div class="container">
+                    <div class="row">
+
+
+<div class="notification-message-box">
+    <div class="message-icon">📢</div>
+
+    <div class="message-content">
+        <h5>New Update from Krishi Bhavan</h5>
+        <p>
+            Stay updated with the latest farming schemes, training programs,
+            seed distribution and agricultural support services.
+        </p>
+    </div>
+
+    <a href="/notification/v_notify2/" class="message-btn">
+        View Notifications →
+    </a>
+</div>
+
+
+        </div>
+    </div>
+</div><!-- Testimonial End -->
+
+
+            <!-- Blog Start -->
+           <!--  <div class="blog">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <p>Latest Blog</p>
+                        <h2>Latest From Our Blog</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img src="img/blog-1.jpg" alt="Image">
+                                </div>
+                                <div class="blog-title">
+                                    <h3>Lorem ipsum dolor sit</h3>
+                                    <a class="btn" href="">+</a>
+                                </div>
+                                <div class="blog-meta">
+                                    <p>By<a href="">Admin</a></p>
+                                    <p>In<a href="">Construction</a></p>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img src="img/blog-2.jpg" alt="Image">
+                                </div>
+                                <div class="blog-title">
+                                    <h3>Lorem ipsum dolor sit</h3>
+                                    <a class="btn" href="">+</a>
+                                </div>
+                                <div class="blog-meta">
+                                    <p>By<a href="">Admin</a></p>
+                                    <p>In<a href="">Construction</a></p>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img src="img/blog-3.jpg" alt="Image">
+                                </div>
+                                <div class="blog-title">
+                                    <h3>Lorem ipsum dolor sit</h3>
+                                    <a class="btn" href="">+</a>
+                                </div>
+                                <div class="blog-meta">
+                                    <p>By<a href="">Admin</a></p>
+                                    <p>In<a href="">Construction</a></p>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Blog End -->
+
+
+            <!-- Footer Start -->
+            <!-- <div class="footer wow fadeIn" data-wow-delay="0.3s">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="footer-contact">
+                                <h2>Office Contact</h2>
+                                <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
+                                <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
+                                <p><i class="fa fa-envelope"></i>info@example.com</p>
+                                <div class="footer-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-youtube"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="footer-link">
+                                <h2>Services Areas</h2>
+                                <a href="">Building Construction</a>
+                                <a href="">House Renovation</a>
+                                <a href="">Architecture Design</a>
+                                <a href="">Interior Design</a>
+                                <a href="">Painting</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="footer-link">
+                                <h2>Useful Pages</h2>
+                                <a href="">About Us</a>
+                                <a href="">Contact Us</a>
+                                <a href="">Our Team</a>
+                                <a href="">Projects</a>
+                                <a href="">Testimonial</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="newsletter">
+                                <h2>Newsletter</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulpu
+                                </p>
+                                <div class="form">
+                                    <input class="form-control" placeholder="Email here">
+                                    <button class="btn">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container footer-menu">
+                    <div class="f-menu">
+                        <a href="">Terms of use</a>
+                        <a href="">Privacy policy</a>
+                        <a href="">Cookies</a>
+                        <a href="">Help</a>
+                        <a href="">FQAs</a>
+                    </div>
+                </div>
+                <div class="container copyright">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Footer Start -->
+<!-- Footer Start -->
+<div class="footer-section">
+
+    <div class="footer-overlay">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-content">
+                        <h2>🌱 Farmfinity</h2>
+                        <p>
+                            Farmfinity is a smart agriculture platform that connects
+                            farmers, consumers, and Krishi Bhavan. Our mission is
+                            to support sustainable farming and provide direct access
+                            to fresh agricultural products and resources.
+                        </p>
+
+                        <div class="footer-contact">
+                            <p><i class="fa fa-map-marker-alt"></i> Kerala, India</p>
+                            <p><i class="fa fa-envelope"></i> farmfinity@gmail.com</p>
+                            <p><i class="fa fa-phone-alt"></i> +91 98765 43210</p>
+                        </div>
+                    </div>
+                    <div class="text-center my-5">
+    <a href="/temp/home/" class="btn btn-danger px-5 py-2">
+        <i class="fas fa-sign-out-alt"></i> Logout
+    </a>
+</div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Payments</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4>Agriculture Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="">Seeds</a></li>
+                        <li><a href="#">Plants</a></li>
+                        <li><a href="#">Fertilizers</a></li>
+                        <li><a href="#">Farming Methods</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Notifications</a></li>
+                        <li><a href="#">Articles & Videos</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Complaints</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-center footer-bottom">
+                <p>
+                    © 2026 <strong>Farmfinity</strong>. All Rights Reserved.
+                    <br>
+                    Connecting Farmers, Consumers & Krishi Bhavan.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- Footer End -->
+<!-- Footer End -->
+            <!-- Footer End -->
+
+            <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        </div>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/lib/easing/easing.min.js"></script>
+        <script src="/static/lib/wow/wow.min.js"></script>
+        <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="/static/lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="/static/lib/lightbox/js/lightbox.min.js"></script>
+        <script src="/static/lib/waypoints/waypoints.min.js"></script>
+        <script src="/static/lib/counterup/counterup.min.js"></script>
+        <script src="/static/lib/slick/slick.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="/static/js/main.js"></script>
+    </body>
+</html>

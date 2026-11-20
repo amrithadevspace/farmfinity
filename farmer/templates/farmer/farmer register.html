@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Farmer Register</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(rgba(12,78,33,.75),rgba(12,78,33,.75)),
+    url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80');
+
+    background-size:cover;
+    background-position:center;
+    animation:bgMove 15s ease-in-out infinite alternate;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.12),transparent 35%),
+    radial-gradient(circle at 80% 80%,rgba(255,255,255,.10),transparent 35%);
+
+    animation:float 8s infinite alternate;
+    pointer-events:none;
+}
+
+.home-btn{
+    position:fixed;
+    top:25px;
+    left:25px;
+
+    text-decoration:none;
+    color:white;
+
+    background:linear-gradient(135deg,#1B5E20,#43A047);
+
+    padding:12px 24px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:.4s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.home-btn:hover{
+    transform:translateY(-4px) scale(1.05);
+    box-shadow:0 15px 30px rgba(0,0,0,.35);
+}
+
+form{
+    width:720px;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    border:1px solid rgba(255,255,255,.4);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.30);
+
+    animation:card .8s ease;
+}
+
+h3{
+    text-align:center;
+    color:#1B5E20;
+    margin-bottom:25px;
+    font-size:30px;
+}
+
+table{
+    width:100%;
+}
+
+td{
+    padding:12px;
+    color:#444;
+}
+
+tr{
+    transition:.3s;
+}
+
+tr:hover{
+    background:#f4fff4;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=tel],
+input[type=file]{
+
+    width:100%;
+    padding:12px 15px;
+
+    border:2px solid #ccc;
+
+    border-radius:10px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=tel]:focus,
+input[type=file]:focus{
+
+    border-color:#43A047;
+
+    box-shadow:0 0 12px rgba(67,160,71,.30);
+
+    transform:scale(1.02);
+}
+
+input[type=radio]{
+    accent-color:#2E7D32;
+    transform:scale(1.2);
+}
+
+/* VALIDATION */
+
+.error{
+    display:none;
+    color:#e53935;
+    font-size:13px;
+    margin-top:5px;
+}
+
+input{
+    border:2px solid #ccc;
+}
+.error{
+    display:none;
+    color:#e53935;
+    font-size:13px;
+    margin-top:5px;
+}
+
+
+input[type=submit]{
+
+    width:100%;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(90deg,#2E7D32,#43A047);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+input[type=submit]:hover{
+
+    transform:translateY(-4px);
+
+    background:linear-gradient(90deg,#1B5E20,#388E3C);
+
+    box-shadow:0 12px 25px rgba(46,125,50,.35);
+}
+/* ---------- Animations ---------- */
+
+@keyframes card{
+
+from{
+    opacity:0;
+    transform:translateY(50px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+@keyframes bgMove{
+
+from{
+    background-size:100%;
+}
+
+to{
+    background-size:108%;
+}
+
+}
+
+@keyframes float{
+
+from{
+    transform:translateY(0);
+}
+
+to{
+    transform:translateY(-35px);
+}
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px){
+
+form{
+
+    width:95%;
+    padding:20px;
+
+}
+
+table{
+    width:100%;
+}
+
+tr{
+    display:block;
+    margin-bottom:15px;
+}
+
+td{
+    display:block;
+    width:100%;
+    padding:8px 0;
+}
+
+.home-btn{
+
+    left:10px;
+    top:10px;
+
+    font-size:13px;
+    padding:10px 16px;
+
+}
+
+h3{
+    font-size:24px;
+}
+
+}
+
+/* ---------- Placeholder ---------- */
+
+::placeholder{
+    color:#999;
+}
+
+/* ---------- File Input ---------- */
+
+input[type=file]{
+    background:#fff;
+    cursor:pointer;
+}
+
+/* ---------- Radio Buttons ---------- */
+
+.radio-group{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+/* ---------- Submit Button ---------- */
+
+input[type=submit]:active{
+    transform:scale(.98);
+}
+    .password-box{
+    position:relative;
+}
+
+.password-box input{
+    width:100%;
+    padding-right:45px;
+}
+
+.eye{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:20px;
+    color:#666;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<a href="/temp/home/" class="home-btn">🏡 Back Home</a>
+
+<center>
+
+<form method="post" enctype="multipart/form-data" novalidate>
+
+{% csrf_token %}
+
+<h3>🌾 FARMER REGISTER</h3>
+
+<table>
+
+<tr>
+<td>Farmer Name</td>
+<td>
+<input type="text"
+name="farmername"
+placeholder="Enter farmer name"
+required
+pattern="[A-Za-z ]{3,30}"
+title="Only letters allowed (3-30 characters)">
+<div class="error">Enter a valid farmer name.</div>
+</td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td colspan="2">
+<div class="radio-group">
+<label>
+<input type="radio" name="gender" value="male" required>
+Male
+</label>
+
+<label>
+<input type="radio" name="gender" value="female">
+Female
+</label>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>House Name</td>
+<td>
+<input type="text"
+name="housename"
+placeholder="Enter house name"
+required
+minlength="3">
+<div class="error">House name is required.</div>
+</td>
+</tr>
+
+<tr>
+<td>Place</td>
+<td>
+<input type="text"
+name="place"
+placeholder="Enter place"
+required
+pattern="[A-Za-z ]{3,30}">
+<div class="error">Enter a valid place.</div>
+</td>
+</tr>
+
+<tr>
+<td>Post</td>
+<td>
+<input type="text"
+name="post"
+placeholder="Enter post"
+required
+pattern="[A-Za-z ]{3,30}">
+<div class="error">Enter a valid post.</div>
+</td>
+</tr>
+
+<tr>
+<td>District</td>
+<td>
+<input type="text"
+name="district"
+placeholder="Enter district"
+required
+pattern="[A-Za-z ]{3,30}">
+<div class="error">Enter a valid district.</div>
+</td>
+</tr>
+
+<tr>
+<td>Phone Number</td>
+<td>
+<input
+type="tel"
+name="phonenumber"
+placeholder="Enter phone number"
+required
+pattern="[6-9][0-9]{9}"
+maxlength="10"
+title="Enter a valid 10-digit mobile number">
+<div class="error">Enter a valid 10-digit phone number.</div>
+</td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td>
+<input
+type="email"
+name="email"
+placeholder="Enter email address"
+required>
+<div class="error">Enter a valid email address.</div>
+</td>
+</tr>
+
+<tr>
+<td>Photo</td>
+<td>
+<input
+type="file"
+name="photo"
+accept=".jpg,.jpeg,.png"
+required>
+<div class="error">Please upload a JPG, JPEG or PNG image.</div>
+</td>
+</tr>
+
+<tr>
+<td>Username</td>
+<td>
+<input
+type="text"
+name="username"
+placeholder="Enter username"
+required
+pattern="[A-Za-z0-9_]{4,15}"
+title="Username must be 4-15 characters. Only letters, numbers and underscore (_) are allowed.">
+<div class="error">Username must be 4-15 characters.</div>
+</td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td>
+<div class="password-box">
+    <input
+        type="password"
+        name="password"
+        placeholder="Enter password"
+        required
+        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}">
+    <span class="eye">👁</span>
+</div>
+<div class="error">
+    Password must contain uppercase, lowercase, number and be at least 8 characters.
+</div>
+</td>
+</tr>
+<tr>
+<td>Farming Type</td>
+<td>
+<input
+type="text"
+name="type"
+placeholder="Enter farming type"
+required
+pattern="[A-Za-z ]{3,30}">
+<div class="error">Enter a valid farming type.</div>
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+<input type="submit" value="🌿 REGISTER">
+</td>
+</tr>
+
+</table>
+
+</form>
+
+</center>
+<script>
+const form = document.querySelector("form");
+const inputs = form.querySelectorAll("input");
+
+form.addEventListener("submit", function(e){
+
+    let valid = true;
+
+    inputs.forEach(function(input){
+
+        if(input.type=="submit") return;
+
+        if(input.type=="radio"){
+
+            const radios=document.getElementsByName(input.name);
+            const checked=[...radios].some(r=>r.checked);
+
+            if(!checked){
+                valid=false;
+            }
+
+            return;
+        }
+
+        const error=input.nextElementSibling;
+
+        if(!input.checkValidity()){
+
+            input.style.border="2px solid red";
+
+            if(error){
+                error.style.display="block";
+            }
+
+            valid=false;
+
+        }else{
+
+            input.style.border="2px solid #43A047";
+
+            if(error){
+                error.style.display="none";
+            }
+
+        }
+
+    });
+
+    if(!valid){
+        e.preventDefault();
+    }
+
+});
+
+// Hide the error while typing
+inputs.forEach(function(input){
+
+    if(input.type=="submit" || input.type=="radio") return;
+
+    input.addEventListener("input",function(){
+
+        const error=this.nextElementSibling;
+
+        if(this.checkValidity()){
+
+            this.style.border="2px solid #43A047";
+
+            if(error){
+                error.style.display="none";
+            }
+
+        }else{
+
+            this.style.border="2px solid red";
+
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Order Details2</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+/* BODY */
+
+body{
+    min-height:100vh;
+    padding:30px;
+    background:linear-gradient(135deg,#E8F5E9,#C8E6C9,#F1F8E9);
+}
+
+
+/* HEADER */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+
+/* BACK BUTTON */
+
+.back-btn{
+    text-decoration:none;
+    background:#2E7D32;
+    color:white;
+    padding:12px 24px;
+    border-radius:30px;
+    font-weight:600;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#1B5E20;
+    transform:translateY(-3px);
+}
+
+
+/* PAGE TITLE */
+
+.header h2{
+    font-size:32px;
+    color:#1B5E20;
+    font-weight:700;
+}
+
+
+/* TABLE CARD */
+
+.table-container{
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+
+/* TABLE */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+
+/* TABLE HEADER */
+
+th{
+    background:#2E7D32;
+    color:white;
+    padding:16px;
+    text-align:center;
+    font-size:15px;
+    font-weight:600;
+}
+
+
+/* TABLE DATA */
+
+td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #E0E0E0;
+    color:#444;
+    font-size:15px;
+    vertical-align:middle;
+}
+
+
+/* ALTERNATE ROW COLOR */
+
+tr:nth-child(even){
+    background:#FAFFFA;
+}
+
+
+/* HOVER EFFECT */
+
+tr:hover{
+    background:#E8F5E9;
+    transition:0.3s;
+}
+
+
+/* STATUS BADGE */
+
+.status{
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:20px;
+    background:#E8F5E9;
+    color:#1B5E20;
+    font-weight:600;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:768px){
+
+body{
+    padding:20px;
+}
+
+.header{
+    flex-direction:column;
+    gap:15px;
+}
+
+.header h2{
+    font-size:24px;
+    text-align:center;
+}
+
+.back-btn{
+    align-self:flex-start;
+}
+
+.table-container{
+    overflow-x:auto;
+}
+
+table{
+    min-width:650px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+<a href="/temp/admin/" class="back-btn">← Back Home</a>
+
+<h2>📦 View Order Details</h2>
+
+</div>
+
+<div class="table-container">
+
+<table>
+
+<tr>
+
+<th>Date</th>
+<th>User</th>
+<th>Product</th>
+<th>Quantity</th>
+<th>Total Amount</th>
+<th>Status</th>
+
+</tr>
+
+{% for i in aa %}
+
+<tr>
+
+<td>{{ i.date }}</td>
+<td>{{ i.user.username }}</td>
+<td>{{ i.product.product_name }}</td>
+<td>{{ i.quantity }}</td>
+<td>{{ i.total_amount }}</td>
+
+<td class="status">{{ i.status }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>
